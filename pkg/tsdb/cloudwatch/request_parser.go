@@ -221,7 +221,7 @@ func parseRequestQuery(model QueryJson, refId string, startTime time.Time, endTi
 		suffix := refId
 		if !validMetricDataID.MatchString(suffix) {
 			uuid := uuid.NewString()
-			suffix = strings.Replace(uuid, "-", "", -1)
+			suffix = strings.ReplaceAll(uuid, "-", "")
 		}
 		cloudWatchQuery.Id = fmt.Sprintf("query%s", suffix)
 	}

@@ -167,7 +167,7 @@ func CuetsifyPlugins(ctx *cue.Context, root string) (WriteDiffer, error) {
 
 			var buf bytes.Buffer
 			err = tsTemplate.Execute(&buf, f)
-			outfiles[filepath.Join(root, strings.Replace(path, ".cue", ".gen.ts", -1))] = buf.Bytes()
+			outfiles[filepath.Join(root, strings.ReplaceAll(path, ".cue", ".gen.ts"))] = buf.Bytes()
 			return err
 		})
 	}
