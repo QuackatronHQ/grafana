@@ -78,7 +78,7 @@ func (s *Server) NewRequest(method string, target string, body io.Reader) *http.
 }
 
 // Send sends a HTTP request to the test server and returns an HTTP response.
-func (s *Server) Send(req *http.Request) (*http.Response, error) {
+func (*Server) Send(req *http.Request) (*http.Response, error) {
 	return http.DefaultClient.Do(req)
 }
 
