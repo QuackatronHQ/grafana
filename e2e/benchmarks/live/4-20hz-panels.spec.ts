@@ -6,6 +6,8 @@ type WithGrafanaRuntime<T> = T & {
       start: () => void;
       getStats: () => Record<string, unknown>;
     };
+    
+    
   };
 };
 
