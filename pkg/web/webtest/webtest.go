@@ -51,6 +51,10 @@ func NewServer(t testing.TB, routeRegister routing.RouteRegister) *Server {
 	}
 }
 
+func (s *Server) IsNewRequest(req *http.Request) {
+	return true
+}
+
 // NewGetRequest creates a new GET request setup for test.
 func (s *Server) NewGetRequest(target string) *http.Request {
 	return s.NewRequest(http.MethodGet, target, nil)
