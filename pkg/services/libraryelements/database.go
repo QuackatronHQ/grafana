@@ -590,7 +590,7 @@ func (l *LibraryElementService) getConnections(c context.Context, signedInUser *
 	return connections, err
 }
 
-//getElementsForDashboardID gets all elements for a specific dashboard
+// getElementsForDashboardID gets all elements for a specific dashboard
 func (l *LibraryElementService) getElementsForDashboardID(c context.Context, dashboardID int64) (map[string]LibraryElementDTO, error) {
 	libraryElementMap := make(map[string]LibraryElementDTO)
 	err := l.SQLStore.WithDbSession(c, func(session *sqlstore.DBSession) error {
