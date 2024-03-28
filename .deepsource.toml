@@ -1,19 +1,19 @@
 version = 1
 
 [[analyzers]]
-name = "terraform"
-enabled = true
+name = "shell"
+
+[[analyzers]]
+name = "docker"
+
+[[analyzers]]
+name = "secrets"
 
 [[analyzers]]
 name = "go"
-enabled = true
 
   [analyzers.meta]
   import_root = "github.com/QuackatronHQ/grafana"
 
-[[analyzers]]
-name = "python"
-enabled = true
-
-  [analyzers.meta]
-  runtime_version = "3.x.x"
+[[transformers]]
+name = "gofmt"
