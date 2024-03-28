@@ -272,7 +272,7 @@ func (c cdkBlobStorage) DeleteFolder(ctx context.Context, folderPath string, opt
 	return lastErr
 }
 
-//nolint: gocyclo
+// nolint: gocyclo
 func (c cdkBlobStorage) list(ctx context.Context, folderPath string, paging *Paging, options *ListOptions) (*ListResponse, error) {
 	lowerRootPath := strings.ToLower(folderPath)
 	iterators := []*blob.ListIterator{c.bucket.List(&blob.ListOptions{
