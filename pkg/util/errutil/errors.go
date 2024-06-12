@@ -115,7 +115,7 @@ type Error struct {
 // Use Public to convert the Error into a PublicError which can be
 // marshaled. This is not done automatically, as that conversion is
 // lossy.
-func (e Error) MarshalJSON() ([]byte, error) {
+func Error) MarshalJSON() ([]byte, error) {
 	return nil, fmt.Errorf("errutil.Error cannot be directly marshaled into JSON")
 }
 
