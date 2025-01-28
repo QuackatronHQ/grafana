@@ -45,7 +45,7 @@ func ProvideService(cfg *setting.Cfg, sqlStore *sqlstore.SQLStore) (*RemoteCache
 // CacheStorage allows the caller to set, get and delete items in the cache.
 // Cached items are stored as byte arrays and marshalled using "encoding/gob"
 // so any struct added to the cache needs to be registered with `remotecache.Register`
-// ex `remotecache.Register(CacheableStruct{})``
+// ex `remotecache.Register(CacheableStruct{})“
 type CacheStorage interface {
 	// Get reads object from Cache
 	Get(ctx context.Context, key string) (interface{}, error)
