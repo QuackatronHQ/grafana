@@ -96,9 +96,7 @@ func (dto *DashboardAclInfoDTO) IsDuplicateOf(other *DashboardAclInfoDTO) bool {
 	return dto.hasSameRoleAs(other) || dto.hasSameUserAs(other) || dto.hasSameTeamAs(other)
 }
 
-//
 // QUERIES
-//
 type GetDashboardAclInfoListQuery struct {
 	DashboardID int64
 	OrgID       int64
