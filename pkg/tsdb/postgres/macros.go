@@ -65,7 +65,7 @@ func (m *postgresMacroEngine) Interpolate(query *backend.DataQuery, timeRange ba
 	return sql, nil
 }
 
-//nolint: gocyclo
+// nolint: gocyclo
 func (m *postgresMacroEngine) evaluateMacro(timeRange backend.TimeRange, query *backend.DataQuery, name string, args []string) (string, error) {
 	switch name {
 	case "__time":
