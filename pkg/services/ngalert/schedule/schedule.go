@@ -25,6 +25,7 @@ import (
 
 // ScheduleService is an interface for a service that schedules the evaluation
 // of alert rules.
+//
 //go:generate mockery --name ScheduleService --structname FakeScheduleService --inpackage --filename schedule_mock.go
 type ScheduleService interface {
 	// Run the scheduler until the context is canceled or the scheduler returns
@@ -44,8 +45,9 @@ type ScheduleService interface {
 	folderUpdateHandler(ctx context.Context, evt *events.FolderUpdated) error
 }
 
-//go:generate mockery --name AlertsSender --structname AlertsSenderMock --inpackage --filename alerts_sender_mock.go --with-expecter
 // AlertsSender is an interface for a service that is responsible for sending notifications to the end-user.
+//
+//go:generate mockery --name AlertsSender --structname AlertsSenderMock --inpackage --filename alerts_sender_mock.go --with-expecter
 type AlertsSender interface {
 	Send(key ngmodels.AlertRuleKey, alerts definitions.PostableAlerts)
 }
